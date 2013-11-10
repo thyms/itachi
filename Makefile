@@ -2,9 +2,9 @@
 checkout-project:
 	git checkout develop
 	git submodule update --init --recursive
-	cd presentation && git remote rm origin && git remote add origin git@github.com:thyms/eva-presentation.git && git fetch && git checkout develop
-	cd presentation-functional && git remote rm origin && git remote add origin git@github.com:thyms/eva-presentation-functional.git && git fetch && git checkout develop
-	cd presentation-stubulator && git remote rm origin && git remote add origin git@github.com:thyms/eva-presentation-stubulator.git && git fetch && git checkout develop
+	cd presentation && git remote rm origin && git remote add origin git@github.com:thyms/itachi-presentation.git && git fetch && git checkout develop
+	cd presentation-functional && git remote rm origin && git remote add origin git@github.com:thyms/itachi-presentation-functional.git && git fetch && git checkout develop
+	cd presentation-stubulator && git remote rm origin && git remote add origin git@github.com:thyms/itachi-presentation-stubulator.git && git fetch && git checkout develop
 
 setup-project:
 	make checkout-project

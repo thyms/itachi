@@ -1,9 +1,9 @@
 [submodule "presentation"]
 	path = presentation
-	url = https://github.com/thyms/eva-presentation.git
+	url = https://github.com/thyms/itachi-presentation.git
 [submodule "presentation-functional"]
 	path = presentation-functional
-	url = https://github.com/thyms/eva-presentation-functional.git
+	url = https://github.com/thyms/itachi-presentation-functional.git
 [submodule "presentation-stubulator"]
 	path = presentation-stubulator
-	url = https://github.com/thyms/eva-presentation-stubulator.git
+	url = https://github.com/thyms/itachi-presentation-stubulator.git

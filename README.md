@@ -1,3 +1,3 @@
-Parent build project for project Eva.
+Parent build project for project itachi.
 
 TODO: [DK] fill in this...
