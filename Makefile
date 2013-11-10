@@ -11,6 +11,28 @@ setup-project:
 	cd presentation && make setup-app
 	cd presentation-stubulator && make setup-app
 
+setup-heroku:
+	heroku apps:create --remote functional01 --app itachi-presentation-func01
+	heroku apps:create --remote qa01         --app itachi-presentation-qa01
+	heroku apps:create --remote demo01       --app itachi-presentation-demo01
+	heroku apps:create --remote stage01      --app itachi-presentation-stage01
+	heroku apps:create --remote prod01       --app itachi-presentation-prod01
+	heroku apps:create --remote stubulator01 --app itachi-presentation-stub01
+	heroku config:add NODE_ENV=functional01  --app itachi-presentation-func01
+	heroku config:add NODE_ENV=qa01          --app itachi-presentation-qa01
+	heroku config:add NODE_ENV=demo01        --app itachi-presentation-demo01
+	heroku config:add NODE_ENV=stage01       --app itachi-presentation-stage01
+	heroku config:add NODE_ENV=prod01        --app itachi-presentation-prod01
+	heroku config:add NODE_ENV=stubulator01  --app itachi-presentation-stub01
+
+setup-travis:
+	cd presentation && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	cd presentation-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	cd core && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	cd core-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	ga && gcm "@thyms updated heroku deployment key."
+	git push
+
 test-app-ci:
 	cd presentation-functional && make test-app-ci
 
