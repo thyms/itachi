@@ -18,7 +18,7 @@ namespace :project do
     ['presentation', 'presentation-functional', 'presentation-stubulator'].each { |project|
       sh %{cd #{project} && git push --all}
     }
-    sh('git push -all')
+    sh('git push --all')
     puts
     puts "======================================================"
     puts "Pushing has been completed successfully..."
