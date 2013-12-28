@@ -33,7 +33,7 @@ setup-travis:
 	cd presentation && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && git add -A && git commit -m "@thyms updated heroku deployment key."
 	cd presentation-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && git add -A && git commit -m "@thyms updated heroku deployment key."
 	git add -A && git commit -m "@thyms updated heroku deployment key."
-	git push
+	rake project:push
 
 test-app-ci:
 	cd presentation-functional && make test-app-ci
