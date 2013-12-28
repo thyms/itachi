@@ -35,6 +35,9 @@ setup-travis:
 	git add -A && git commit -m "@thyms updated heroku deployment key."
 	rake project:push
 
+test-app:
+	echo 'No test to run for this project, try "make test-app-ci" for CI testing.'
+
 test-app-ci:
 	cd presentation-functional && make test-app-ci
 
