@@ -10,10 +10,10 @@ setup-project:
 	cd presentation-stubulator && make setup-project
 
 setup-git:
-	git remote rm origin && git remote add origin git@github-thyms.com:thyms/macross.git && git fetch && git checkout develop
-	cd presentation && git remote rm origin && git remote add origin git@github-thyms.com:thyms/macross-presentation.git && git fetch && git checkout develop
-	cd presentation-functional && git remote rm origin && git remote add origin git@github-thyms.com:thyms/macross-presentation-functional.git && git fetch && git checkout develop
-	cd presentation-stubulator && git remote rm origin && git remote add origin git@github-thyms.com:thyms/macross-presentation-stubulator.git && git fetch && git checkout develop
+	git remote rm origin && git remote add origin git@github-thyms.com:thyms/itachi.git && git fetch && git checkout develop
+	cd presentation && git remote rm origin && git remote add origin git@github-thyms.com:thyms/itachi-presentation.git && git fetch && git checkout develop
+	cd presentation-functional && git remote rm origin && git remote add origin git@github-thyms.com:thyms/itachi-presentation-functional.git && git fetch && git checkout develop
+	cd presentation-stubulator && git remote rm origin && git remote add origin git@github-thyms.com:thyms/itachi-presentation-stubulator.git && git fetch && git checkout develop
 
 setup-heroku:
 	heroku apps:create --remote func01  --app itachi-presentation-func01
